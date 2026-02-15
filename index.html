@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARGDPS - Приватный сервер</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+
+        .background-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            filter: blur(15px);
+            transform: scale(1.1);
+            z-index: -2;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: -1;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 12vh; 
+        }
+
+        .server-img-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
+        }
+
+        .logo-text {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 5px;
+            line-height: 1;
+            text-transform: uppercase;
+            animation: fadeInDown 1s ease 0.1s backwards;
+        }
+
+        .text-yellow {
+            color: #FFD700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .text-white {
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 35px;
+            font-weight: 500;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .buttons-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.5s backwards;
+        }
+
+        .btn-windows {
+            text-decoration: none;
+            padding: 14px 0;
+            width: 280px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #ffffff;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-windows:hover {
+            background-color: #FFD700;
+            border-color: #FFD700;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-telegram-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0088cc;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-telegram-circle:hover {
+            transform: scale(1.1) translateY(-3px);
+            background-color: #009be6;
+            box-shadow: 0 10px 20px rgba(0, 136, 204, 0.5);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .server-img-logo { width: 90px; height: 90px; }
+            .logo-text { font-size: 2.8rem; }
+            .subtitle { font-size: 0.9rem; }
+            .btn-windows { width: 240px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-layer"></div>
+    <div class="overlay"></div>
+
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="server-img-logo">
+
+        <h1 class="logo-text">
+            <span class="text-yellow">STAR</span><span class="text-white">GDPS</span>
+        </h1>
+        
+        <p class="subtitle">Приватный сервер Geometry Dash</p>
+
+        <div class="buttons-wrapper">
+            
+            <a href="https://pixeldrain.com/u/Lx6k3qaC" class="btn-windows" target="_blank">
+                <i class="fab fa-windows"></i> Скачать для Windows
+            </a>
+
+            <a href="https://t.me/ВАШ_КАНАЛ" class="btn-telegram-circle" target="_blank" title="Наш Telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const bg = document.querySelector('.background-layer');
+            bg.style.transition = 'opacity 1s';
+            bg.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
