@@ -27,6 +27,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            /* Убедитесь, что bg.jpg лежит в той же папке */
             background-image: url('bg.jpg'); 
             background-size: cover;
             background-position: center;
@@ -128,25 +129,25 @@
             box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
         }
 
-        .btn-telegram-circle {
+        .btn-discord-circle {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: #0088cc;
+            background-color: #5865F2;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
             font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3);
             transition: all 0.3s ease;
         }
 
-        .btn-telegram-circle:hover {
+        .btn-discord-circle:hover {
             transform: scale(1.1) translateY(-3px);
-            background-color: #009be6;
-            box-shadow: 0 10px 20px rgba(0, 136, 204, 0.5);
+            background-color: #4752c4;
+            box-shadow: 0 10px 20px rgba(88, 101, 242, 0.5);
         }
 
         @keyframes fadeInDown {
@@ -183,12 +184,12 @@
 
         <div class="buttons-wrapper">
             
-            <a href="https://pixeldrain.com/u/Lx6k3qaC" class="btn-windows" target="_blank">
+            <a href="https://pixeldrain.com/api/file/gQWhCVb8" class="btn-windows" target="_blank">
                 <i class="fab fa-windows"></i> Скачать для Windows
             </a>
 
-            <a href="https://t.me/+RR0AcgRzz1xkNGRi" class="btn-telegram-circle" target="_blank" title="Наш Telegram">
-                <i class="fab fa-telegram-plane"></i>
+            <a href="https://discord.gg/rskgDCW7" class="btn-discord-circle" target="_blank" title="Наш Discord">
+                <i class="fab fa-discord"></i>
             </a>
 
         </div>
@@ -197,8 +198,10 @@
     <script>
         window.addEventListener('load', () => {
             const bg = document.querySelector('.background-layer');
-            bg.style.transition = 'opacity 1s';
-            bg.style.opacity = '1';
+            if(bg) {
+                bg.style.transition = 'opacity 1s';
+                bg.style.opacity = '1';
+            }
         });
     </script>
 </body>
